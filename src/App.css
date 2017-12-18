@@ -1,0 +1,19 @@
+.container {
+  border: 10px solid green;
+  background-color: lightblue;
+  padding: 4px;
+  bottom: 0px;
+}
+
+.mainPageBody {
+  border: 1px solid lightgoldenrodyellow;
+  background-color: lightgray;
+  padding: 8px;
+}
+
+.appTitle {
+  border: 1px solid green;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
