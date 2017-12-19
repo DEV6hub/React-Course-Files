@@ -4,6 +4,7 @@ import './Shipping.css';
 class Shipping extends Component {
   constructor() {
     super();
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       firstName: 'first',
@@ -19,6 +20,10 @@ class Shipping extends Component {
     };
   }
 
+  handleChange = event => {
+    this.setState({ [event.currentTarget.id]: event.currentTarget.value });
+  };
+
   render() {
     return (
       <form>
@@ -32,6 +37,7 @@ class Shipping extends Component {
             required
             placeholder="First Name"
             value={this.state.firstName}
+            onChange={this.handleChange}
           />
 
           <label htmlFor="lastName">Last Name: </label>
@@ -41,6 +47,7 @@ class Shipping extends Component {
             required
             placeholder="Last Name"
             value={this.state.lastName}
+            onChange={this.handleChange}
           />
 
           <label htmlFor="email">Email Address: </label>
@@ -51,6 +58,7 @@ class Shipping extends Component {
             placeholder="you@company.com"
             minLength="6"
             value={this.state.email}
+            onChange={this.handleChange}
           />
 
           <label htmlFor="phone">Phone Number (416-555-6789): </label>
@@ -64,6 +72,7 @@ class Shipping extends Component {
             placeholder="416-555-6789"
             title="10 digits with optional dash, dot, or space separator"
             value={this.state.phone}
+            onChange={this.handleChange}
           />
         </fieldset>
 
@@ -77,6 +86,7 @@ class Shipping extends Component {
             id="address"
             placeholder="123 Main St."
             value={this.state.address}
+            onChange={this.handleChange}
           />
 
           <label htmlFor="city">City: </label>
@@ -86,20 +96,34 @@ class Shipping extends Component {
             id="city"
             placeholder="City"
             value={this.state.city}
+            onChange={this.handleChange}
           />
 
           <label htmlFor="country">Country: </label>
-          <select id="country" value={this.state.country}>
+          <select
+            id="country"
+            value={this.state.country}
+            onChange={this.handleChange}
+          >
             <option value="">Select a country</option>
           </select>
 
           <label htmlFor="region">Province/State: </label>
-          <select id="region" value={this.state.region}>
+          <select
+            id="region"
+            value={this.state.region}
+            onChange={this.handleChange}
+          >
             <option value="">Select a region</option>
           </select>
 
           <label htmlFor="zipPostCode">Postal/Zip Code: </label>
-          <input type="text" id="zipPostCode" value={this.state.zipPostCode} />
+          <input
+            type="text"
+            id="zipPostCode"
+            value={this.state.zipPostCode}
+            onChange={this.handleChange}
+          />
         </fieldset>
 
         <fieldset>
@@ -109,6 +133,7 @@ class Shipping extends Component {
             rows="3"
             placeholder="Anything we should know about?"
             value={this.state.specialInstructions}
+            onChange={this.handleChange}
           />
         </fieldset>
 
