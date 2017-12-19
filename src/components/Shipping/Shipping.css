@@ -1,5 +1,15 @@
-.error {
-  color: red;
+label {
+  display: block;
+}
+
+fieldset {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
 }
 
 select:invalid,
