@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import './Shipping.css';
 import { countries, regions } from './CountriesAndRegions';
-import { FormWithConstraints } from 'react-form-with-constraints';
+import {
+  FormWithConstraints,
+  FieldFeedbacks,
+  FieldFeedback
+} from 'react-form-with-constraints';
 
 class Shipping extends Component {
   constructor() {
@@ -108,12 +112,24 @@ class Shipping extends Component {
           <input
             type="email"
             id="email"
+            name="emailField"
             required
             placeholder="you@company.com"
             minLength="6"
             value={this.state.email}
             onChange={this.handleChange}
           />
+          <FieldFeedbacks for="emailField">
+            <FieldFeedback when="valueMissing">
+              You must provide an email address.
+            </FieldFeedback>
+            <FieldFeedback when="tooShort">
+              Email address should be at least 6 characters long.
+            </FieldFeedback>
+            <FieldFeedback when="*">
+              There's a problem with the email form field!
+            </FieldFeedback>
+          </FieldFeedbacks>
 
           <label htmlFor="phone">Phone Number (416-555-6789): </label>
           <input
