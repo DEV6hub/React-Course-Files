@@ -28,14 +28,39 @@ class Shipping extends Component {
   render() {
     let regionsForSelectedCountry = regions[this.state.country];
     let provStateLabel = 'Region';
+    let postalZipProps = {};
     switch (this.state.country) {
       case 'canada':
         provStateLabel = 'Province';
+        postalZipProps = {
+          label: 'Postal Code (A0A 0A0 or A0A0A0)',
+          minLength: 6,
+          maxLength: 7,
+          regex: '([A-Za-z][0-9][A-Za-z]\\s?[0-9][A-Za-z][0-9])',
+          title: 'Please provide a Canadian postal code (space is optional)',
+          placeholder: 'A0A 0A0 or A0A0A0'
+        };
         break;
       case 'usa':
         provStateLabel = 'State';
+        postalZipProps = {
+          label: 'Zip Code (12345 or 12345-1234)',
+          minLength: 5,
+          maxLength: 10,
+          regex: '([0-9]{5}([-][0-9]{4})?)',
+          title: 'Please provide a 5-digit or 9-digit US zip code',
+          placeholder: '12345 or 12345-1234'
+        };
         break;
       default:
+        postalZipProps = {
+          label: 'Postal/Zip Code',
+          minLength: 0,
+          maxLength: 0,
+          regex: '',
+          title: '',
+          placeholder: ''
+        };
         break;
     }
 
@@ -145,12 +170,18 @@ class Shipping extends Component {
               : null}
           </select>
 
-          <label htmlFor="zipPostCode">Postal/Zip Code: </label>
+          <label htmlFor="zipPostCode">{postalZipProps.label}: </label>
           <input
             type="text"
             id="zipPostCode"
             value={this.state.zipPostCode}
             onChange={this.handleChange}
+            required
+            pattern={postalZipProps.regex}
+            minLength={postalZipProps.minLength}
+            maxLength={postalZipProps.maxLength}
+            placeholder={postalZipProps.placeholder}
+            title={postalZipProps.title}
           />
         </fieldset>
 
