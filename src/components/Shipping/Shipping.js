@@ -32,6 +32,7 @@ class Shipping extends Component {
   }
 
   handleChange = event => {
+    this.shippingForm.validateFields(event.currentTarget.name);
     this.setState({ [event.currentTarget.id]: event.currentTarget.value });
   };
 
@@ -75,7 +76,11 @@ class Shipping extends Component {
     }
 
     return (
-      <FormWithConstraints onSubmit={this.handleSubmit} noValidate>
+      <FormWithConstraints
+        onSubmit={this.handleSubmit}
+        noValidate
+        ref={element => (this.shippingForm = element)}
+      >
         <fieldset>
           <legend>Personal Information</legend>
 
