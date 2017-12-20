@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Shipping.css';
 import { countries, regions } from './CountriesAndRegions';
+import { FormWithConstraints } from 'react-form-with-constraints';
 
 class Shipping extends Component {
   constructor() {
@@ -74,7 +75,7 @@ class Shipping extends Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit} noValidate>
+      <FormWithConstraints onSubmit={this.handleSubmit} noValidate>
         <fieldset>
           <legend>Personal Information</legend>
 
@@ -207,7 +208,7 @@ class Shipping extends Component {
 
         <br />
         <button type="submit">Complete Order</button>
-      </form>
+      </FormWithConstraints>
     );
   }
 }
