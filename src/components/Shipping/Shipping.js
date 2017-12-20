@@ -25,8 +25,9 @@ class Shipping extends Component {
   handleSubmit(event) {
     console.log(this.state);
     event.preventDefault();
-    this.props.createOrder(this.state);
-    this.props.history.push('/thanks');
+    // temporarily disable the following lines while testing the form validation code
+    // this.props.createOrder(this.state);
+    // this.props.history.push('/thanks');
   }
 
   handleChange = event => {
@@ -73,7 +74,7 @@ class Shipping extends Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} noValidate>
         <fieldset>
           <legend>Personal Information</legend>
 
