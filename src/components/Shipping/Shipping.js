@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Shipping.css';
+import { countries } from './CountriesAndRegions';
 
 class Shipping extends Component {
   constructor() {
@@ -7,16 +8,16 @@ class Shipping extends Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      firstName: 'first',
-      lastName: 'last',
-      email: 'rod@dev6.com',
-      phone: '9068977790',
-      address: '4 Robert Speck Pkwy',
-      city: 'Mississauga',
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      address: '',
+      city: '',
       country: '',
       region: '',
-      zipPostCode: 'L4Z 1S1',
-      specialInstructions: 'nothing special required'
+      zipPostCode: '',
+      specialInstructions: ''
     };
   }
 
@@ -104,8 +105,14 @@ class Shipping extends Component {
             id="country"
             value={this.state.country}
             onChange={this.handleChange}
+            required
           >
             <option value="">Select a country</option>
+            {countries.map(country => (
+              <option key={country.id} value={country.id}>
+                {country.name}
+              </option>
+            ))}
           </select>
 
           <label htmlFor="region">Province/State: </label>
