@@ -50,7 +50,7 @@ class Shipping extends Component {
       case 'canada':
         provStateLabel = 'Province';
         postalZipProps = {
-          label: 'Postal Code (A0A 0A0 or A0A0A0)',
+          label: 'Postal Code',
           minLength: 6,
           maxLength: 7,
           regex: '([A-Za-z][0-9][A-Za-z]\\s?[0-9][A-Za-z][0-9])',
@@ -61,7 +61,7 @@ class Shipping extends Component {
       case 'usa':
         provStateLabel = 'State';
         postalZipProps = {
-          label: 'Zip Code (12345 or 12345-1234)',
+          label: 'Zip Code',
           minLength: 5,
           maxLength: 10,
           regex: '([0-9]{5}([-][0-9]{4})?)',
@@ -94,21 +94,33 @@ class Shipping extends Component {
           <input
             type="text"
             id="firstName"
+            name="firstNameField"
             required
             placeholder="First Name"
             value={this.state.firstName}
             onChange={this.handleChange}
           />
+          <FieldFeedbacks for="firstNameField">
+            <FieldFeedback when="valueMissing">
+              You must provide a First Name.
+            </FieldFeedback>
+          </FieldFeedbacks>
 
           <label htmlFor="lastName">Last Name: </label>
           <input
             type="text"
             id="lastName"
+            name="lastNameField"
             required
             placeholder="Last Name"
             value={this.state.lastName}
             onChange={this.handleChange}
           />
+          <FieldFeedbacks for="lastNameField">
+            <FieldFeedback when="valueMissing">
+              You must provide a Last Name.
+            </FieldFeedback>
+          </FieldFeedbacks>
 
           <label htmlFor="email">Email Address: </label>
           <input
@@ -124,7 +136,7 @@ class Shipping extends Component {
           />
           <FieldFeedbacks for="emailField">
             <FieldFeedback when="valueMissing">
-              You must provide an email address.
+              You must provide an Email Address.
             </FieldFeedback>
             <FieldFeedback when="tooShort">
               Email address should be at least 6 characters long.
@@ -141,6 +153,7 @@ class Shipping extends Component {
           <input
             type="tel"
             id="phone"
+            name="phoneField"
             pattern="[0-9]{3}[ -.]?[0-9]{3}[ -.]?[0-9]{4}"
             required
             minLength="10"
@@ -150,6 +163,25 @@ class Shipping extends Component {
             value={this.state.phone}
             onChange={this.handleChange}
           />
+          <FieldFeedbacks for="phoneField">
+            <FieldFeedback when="valueMissing">
+              You must provide a Phone Number.
+            </FieldFeedback>
+            <FieldFeedback when="tooShort">
+              Phone Number should be at least 10 digits.
+            </FieldFeedback>
+            <FieldFeedback when="tooLong">
+              Phone Number should be no more than 12 characters long including
+              all optional separators.
+            </FieldFeedback>
+            <FieldFeedback when="patternMismatch">
+              Phone Number should contain 10 digits with optional dash, dot, or
+              space separator. Do not include parentheses.
+            </FieldFeedback>
+            <FieldFeedback when="*">
+              There's a problem with the Phone Number field.
+            </FieldFeedback>
+          </FieldFeedbacks>
         </fieldset>
 
         <fieldset>
@@ -160,24 +192,37 @@ class Shipping extends Component {
             type="text"
             required
             id="address"
+            name="addressField"
             placeholder="123 Main St."
             value={this.state.address}
             onChange={this.handleChange}
           />
+          <FieldFeedbacks for="addressField">
+            <FieldFeedback when="valueMissing">
+              You must provide a Street Address.
+            </FieldFeedback>
+          </FieldFeedbacks>
 
           <label htmlFor="city">City: </label>
           <input
             type="text"
             required
             id="city"
+            name="cityField"
             placeholder="City"
             value={this.state.city}
             onChange={this.handleChange}
           />
+          <FieldFeedbacks for="cityField">
+            <FieldFeedback when="valueMissing">
+              You must provide a City.
+            </FieldFeedback>
+          </FieldFeedbacks>
 
           <label htmlFor="country">Country: </label>
           <select
             id="country"
+            name="countryField"
             value={this.state.country}
             onChange={this.handleChange}
             required
@@ -189,10 +234,16 @@ class Shipping extends Component {
               </option>
             ))}
           </select>
+          <FieldFeedbacks for="countryField">
+            <FieldFeedback when="valueMissing">
+              You must select a Country.
+            </FieldFeedback>
+          </FieldFeedbacks>
 
           <label htmlFor="region">{provStateLabel}: </label>
           <select
             id="region"
+            name="regionField"
             value={this.state.region}
             onChange={this.handleChange}
             required
@@ -206,11 +257,19 @@ class Shipping extends Component {
                 ))
               : null}
           </select>
+          <FieldFeedbacks for="regionField">
+            <FieldFeedback when="valueMissing">
+              You must select a {provStateLabel}.
+            </FieldFeedback>
+          </FieldFeedbacks>
 
-          <label htmlFor="zipPostCode">{postalZipProps.label}: </label>
+          <label htmlFor="zipPostCode">
+            {postalZipProps.label} ({postalZipProps.placeholder}):{' '}
+          </label>
           <input
             type="text"
             id="zipPostCode"
+            name="zipPostCodeField"
             value={this.state.zipPostCode}
             onChange={this.handleChange}
             required
@@ -220,6 +279,25 @@ class Shipping extends Component {
             placeholder={postalZipProps.placeholder}
             title={postalZipProps.title}
           />
+          <FieldFeedbacks for="zipPostCodeField">
+            <FieldFeedback when="valueMissing">
+              You must provide a {postalZipProps.label}.
+            </FieldFeedback>
+            <FieldFeedback when="tooShort">
+              {postalZipProps.label} should be at least{' '}
+              {postalZipProps.minLength} characters.
+            </FieldFeedback>
+            <FieldFeedback when="tooLong">
+              {postalZipProps.label} should be no more than{' '}
+              {postalZipProps.maxLength} characters.
+            </FieldFeedback>
+            <FieldFeedback when="patternMismatch">
+              Please provide a valid {postalZipProps.label}.
+            </FieldFeedback>
+            <FieldFeedback when="*">
+              There's a problem with the {postalZipProps.label} field.
+            </FieldFeedback>
+          </FieldFeedbacks>
         </fieldset>
 
         <fieldset>
