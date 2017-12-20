@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Shipping.css';
-import { countries } from './CountriesAndRegions';
+import { countries, regions } from './CountriesAndRegions';
 
 class Shipping extends Component {
   constructor() {
@@ -26,6 +26,7 @@ class Shipping extends Component {
   };
 
   render() {
+    let regionsForSelectedCountry = regions[this.state.country];
     return (
       <form>
         <fieldset>
@@ -120,8 +121,16 @@ class Shipping extends Component {
             id="region"
             value={this.state.region}
             onChange={this.handleChange}
+            required
           >
             <option value="">Select a region</option>
+            {regionsForSelectedCountry && regionsForSelectedCountry.length > 0
+              ? regionsForSelectedCountry.map(region => (
+                  <option key={region} value={region}>
+                    {region}
+                  </option>
+                ))
+              : null}
           </select>
 
           <label htmlFor="zipPostCode">Postal/Zip Code: </label>
