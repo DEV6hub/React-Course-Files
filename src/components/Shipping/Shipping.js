@@ -27,6 +27,18 @@ class Shipping extends Component {
 
   render() {
     let regionsForSelectedCountry = regions[this.state.country];
+    let provStateLabel = 'Region';
+    switch (this.state.country) {
+      case 'canada':
+        provStateLabel = 'Province';
+        break;
+      case 'usa':
+        provStateLabel = 'State';
+        break;
+      default:
+        break;
+    }
+
     return (
       <form>
         <fieldset>
@@ -116,14 +128,14 @@ class Shipping extends Component {
             ))}
           </select>
 
-          <label htmlFor="region">Province/State: </label>
+          <label htmlFor="region">{provStateLabel}: </label>
           <select
             id="region"
             value={this.state.region}
             onChange={this.handleChange}
             required
           >
-            <option value="">Select a region</option>
+            <option value="">Select a {provStateLabel.toLowerCase()}</option>
             {regionsForSelectedCountry && regionsForSelectedCountry.length > 0
               ? regionsForSelectedCountry.map(region => (
                   <option key={region} value={region}>
