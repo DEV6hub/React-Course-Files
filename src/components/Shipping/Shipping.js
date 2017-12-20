@@ -25,6 +25,8 @@ class Shipping extends Component {
   handleSubmit(event) {
     console.log(this.state);
     event.preventDefault();
+    this.props.createOrder(this.state);
+    this.props.history.push('/thanks');
   }
 
   handleChange = event => {
