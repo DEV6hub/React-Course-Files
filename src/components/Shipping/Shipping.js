@@ -30,9 +30,11 @@ class Shipping extends Component {
   handleSubmit(event) {
     console.log(this.state);
     event.preventDefault();
-    // temporarily disable the following lines while testing the form validation code
-    // this.props.createOrder(this.state);
-    // this.props.history.push('/thanks');
+    this.shippingForm.validateFields();
+    if (this.shippingForm.isValid()) {
+      this.props.createOrder(this.state);
+      this.props.history.push('/thanks');
+    }
   }
 
   handleChange = event => {
