@@ -111,6 +111,7 @@ class Shipping extends Component {
           <label htmlFor="email">Email Address: </label>
           <input
             type="email"
+            pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
             id="email"
             name="emailField"
             required
@@ -125,6 +126,9 @@ class Shipping extends Component {
             </FieldFeedback>
             <FieldFeedback when="tooShort">
               Email address should be at least 6 characters long.
+            </FieldFeedback>
+            <FieldFeedback when="patternMismatch">
+              Email address should resemble the pattern: <em>user@domain</em>.
             </FieldFeedback>
             <FieldFeedback when="*">
               There's a problem with the email form field!
