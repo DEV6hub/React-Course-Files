@@ -6,6 +6,7 @@ class Shipping extends Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
       firstName: '',
@@ -19,6 +20,11 @@ class Shipping extends Component {
       zipPostCode: '',
       specialInstructions: ''
     };
+  }
+
+  handleSubmit(event) {
+    console.log(this.state);
+    event.preventDefault();
   }
 
   handleChange = event => {
@@ -65,7 +71,7 @@ class Shipping extends Component {
     }
 
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <fieldset>
           <legend>Personal Information</legend>
 
