@@ -1,0 +1,29 @@
+// canada
+postalZipProps = {
+    label: 'Postal Code (A0A 0A0 or A0A0A0)',
+    minLength: 6,
+    maxLength: 7,
+    regex: '([A-Za-z][0-9][A-Za-z]\\s?[0-9][A-Za-z][0-9])',
+    title: 'Please provide a Canadian postal code (space is optional)',
+    placeholder: 'A0A 0A0 or A0A0A0'
+};
+
+// usa
+postalZipProps = {
+    label: 'Zip Code (12345 or 12345-1234)',
+    minLength: 5,
+    maxLength: 10,
+    regex: '([0-9]{5}([-][0-9]{4})?)',
+    title: 'Please provide a 5-digit or 9-digit US zip code',
+    placeholder: '12345 or 12345-1234'
+};
+
+// default
+postalZipProps = {
+    label: 'Postal/Zip Code',
+    minLength: 0,
+    maxLength: 0,
+    regex: '',
+    title: '',
+    placeholder: ''
+};
