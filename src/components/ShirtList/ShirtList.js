@@ -11,7 +11,7 @@ class ShirtList extends React.Component {
   render = props => (
     <div>
       <Link to="/config/new">Create a new shirt for your catalog</Link>
-      {this.renderShirts()}
+      {Object.keys(this.props.shirts).length > 0 && this.renderShirts()}
     </div>
   );
 
