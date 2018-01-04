@@ -9,7 +9,9 @@ class Shirt extends Component {
       <div style={styles.outerContainer}>
         <div style={styles.shirtContainer}>
           <img src={shirtImagePath} alt="shirt" style={styles.shirtImage} />
-          <div style={styles.sizeContainer}>size</div>
+          <div style={styles.sizeContainer}>
+            {this.props.shirt.size[0].toUpperCase()}
+          </div>
           <div style={styles.priceContainer}>${this.props.shirt.price}</div>
           <div style={styles.logoContainer}>
             <img
