@@ -11,11 +11,17 @@ class ShirtList extends React.Component {
   render = props => (
     <div>
       <Link to="/config/new">Create a new shirt for your catalog</Link>
+      {this.renderShirts()}
+    </div>
+  );
+
+  renderShirts() {
+    return (
       <div className="shirtListWrapper">
         {Object.keys(this.props.shirts).map(this.renderShirtItem)}
       </div>
-    </div>
-  );
+    );
+  }
 
   renderShirtItem(key) {
     return (
