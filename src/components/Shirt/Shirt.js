@@ -6,7 +6,11 @@ class Shirt extends Component {
     return (
       <div style={styles.outerContainer}>
         <div style={styles.shirtContainer}>
-          <img alt="shirt" style={styles.shirtImage} />
+          <img
+            src={require('../../images/m-blank.png')}
+            alt="shirt"
+            style={styles.shirtImage}
+          />
           <div style={styles.sizeContainer}>size</div>
           <div style={styles.priceContainer}>${this.props.shirt.price}</div>
           <div style={styles.logoContainer}>
