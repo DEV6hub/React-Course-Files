@@ -149,7 +149,7 @@ export class ShirtShop extends React.Component {
             {React.createElement(
               'div',
               { className: 'appTitle' },
-              'React ShirtShop'
+              React.createElement('h1', null, 'React ShirtShop')
             )}
             <Route
               exact
