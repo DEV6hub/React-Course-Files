@@ -8,7 +8,9 @@ class ShirtList extends React.Component {
     super();
     this.renderShirtItem = this.renderShirtItem.bind(this);
   }
-  render = props => null;
+  render = props => (
+    <Link to="/config/new">Create a new shirt for your catalog</Link>
+  );
 
   renderShirtItem(key) {
     return (
