@@ -146,6 +146,11 @@ export class ShirtShop extends React.Component {
       <Router>
         <div className="container">
           <div className="mainPageBody">
+            {React.createElement(
+              'div',
+              { className: 'appTitle' },
+              'React ShirtShop'
+            )}
             <Route
               exact
               path="/"
