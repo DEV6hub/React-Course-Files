@@ -1,8 +1,10 @@
 import React from 'react';
+import './NavBar.css';
+
 const NavBar = props => (
-  <nav>
-    {Object.keys(props.shirts).length} shirts and{' '}
-    {Object.keys(props.cartItems).length} cart items
+  <nav className="navmenu">
+    <button>Catalog - {Object.keys(props.shirts).length} saved items</button>
+    <button>Cart - {Object.keys(props.cartItems).length} items</button>
   </nav>
 );
 
