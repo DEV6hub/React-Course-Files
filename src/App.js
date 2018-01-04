@@ -154,10 +154,10 @@ export class ShirtShop extends React.Component {
             <div className="appTitle">
               <h1>React ShirtShop</h1>
             </div>
-            {React.createElement(NavBar, {
-              cartItems: this.state.cartItems,
-              shirts: this.state.shirts
-            })}
+            <NavBar
+              cartItems={this.state.cartItems}
+              shirts={this.state.shirts}
+            />
             <Route
               exact
               path="/"
