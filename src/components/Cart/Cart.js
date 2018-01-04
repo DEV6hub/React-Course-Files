@@ -44,14 +44,7 @@ class Cart extends Component {
         .reduce((previous, current) => previous + current);
     }
 
-    return (
-      <div>
-        <h2>Your Cart</h2>
-        {total > 0
-          ? this.renderCartTable(total, quantities)
-          : this.renderEmpty()}
-      </div>
-    );
+    return <h2>Your Cart</h2>;
   }
 
   renderEmpty() {

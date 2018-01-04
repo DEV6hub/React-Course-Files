@@ -145,10 +145,6 @@ export class ShirtShop extends React.Component {
     return (
       <Router>
         <div className="container">
-          <div className="appTitle">
-            <h1>React ShirtShop</h1>
-          </div>
-          <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
           <div className="mainPageBody">
             <Route
               exact

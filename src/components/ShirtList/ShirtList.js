@@ -8,30 +8,7 @@ class ShirtList extends React.Component {
     super();
     this.renderShirtItem = this.renderShirtItem.bind(this);
   }
-  render = props => (
-    <div>
-      {this.renderAddLink()}
-      {Object.keys(this.props.shirts).length > 0
-        ? this.renderShirts()
-        : this.renderEmpty()}
-    </div>
-  );
-
-  renderAddLink() {
-    return <Link to="/config/new">Create a new shirt for your catalog</Link>;
-  }
-
-  renderEmpty() {
-    return <div>Your catalog is empty.</div>;
-  }
-
-  renderShirts() {
-    return (
-      <div className="shirtListWrapper">
-        {Object.keys(this.props.shirts).map(this.renderShirtItem)}
-      </div>
-    );
-  }
+  render = props => null;
 
   renderShirtItem(key) {
     return (
