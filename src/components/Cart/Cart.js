@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import './Cart.css';
 
@@ -45,12 +45,12 @@ class Cart extends Component {
     }
 
     return (
-      <div>
+      <Fragment>
         <h2>Your Cart</h2>
         {total > 0
           ? this.renderCartTable(total, quantities)
           : this.renderEmpty()}
-      </div>
+      </Fragment>
     );
   }
 
@@ -60,7 +60,7 @@ class Cart extends Component {
 
   renderCartTable(total, quantities) {
     return (
-      <div>
+      <Fragment>
         <table>
           <thead>
             <tr>
@@ -87,7 +87,7 @@ class Cart extends Component {
         <Link to="/shipping">
           <button>NEXT</button>
         </Link>
-      </div>
+      </Fragment>
     );
   }
 
