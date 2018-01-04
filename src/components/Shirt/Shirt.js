@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 
 class Shirt extends Component {
   render() {
+    let shirtImagePath =
+      shirtImages[this.props.shirt.style][this.props.shirt.color];
     return (
       <div style={styles.outerContainer}>
         <div style={styles.shirtContainer}>
-          <img
-            src={require('../../images/m-blank.png')}
-            alt="shirt"
-            style={styles.shirtImage}
-          />
+          <img src={shirtImagePath} alt="shirt" style={styles.shirtImage} />
           <div style={styles.sizeContainer}>size</div>
           <div style={styles.priceContainer}>${this.props.shirt.price}</div>
           <div style={styles.logoContainer}>
