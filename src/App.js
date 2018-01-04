@@ -154,6 +154,7 @@ export class ShirtShop extends React.Component {
             <div className="appTitle">
               <h1>React ShirtShop</h1>
             </div>
+            {React.createElement(NavBar)}
             <Route
               exact
               path="/"
