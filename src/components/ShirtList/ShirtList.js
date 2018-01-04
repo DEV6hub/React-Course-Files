@@ -9,7 +9,12 @@ class ShirtList extends React.Component {
     this.renderShirtItem = this.renderShirtItem.bind(this);
   }
   render = props => (
-    <Link to="/config/new">Create a new shirt for your catalog</Link>
+    <div>
+      <Link to="/config/new">Create a new shirt for your catalog</Link>
+      <div className="shirtListWrapper">
+        {Object.keys(this.props.shirts).map(this.renderShirtItem)}
+      </div>
+    </div>
   );
 
   renderShirtItem(key) {
