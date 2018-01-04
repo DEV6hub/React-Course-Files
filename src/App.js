@@ -146,11 +146,14 @@ export class ShirtShop extends React.Component {
       <Router>
         <div className="container">
           <div className="mainPageBody">
-            {React.createElement(
+            {/*React.createElement(
               'div',
               { className: 'appTitle' },
               React.createElement('h1', null, 'React ShirtShop')
-            )}
+            )*/}
+            <div className="appTitle">
+              <h1>React ShirtShop</h1>
+            </div>
             <Route
               exact
               path="/"
