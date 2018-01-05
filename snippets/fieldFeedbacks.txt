@@ -1,0 +1,12 @@
+//Forms Lab - Add feedback messages for invalid email addresses
+<FieldFeedbacks for="emailField">
+	<FieldFeedback when="valueMissing">
+		You must provide an email address.
+	</FieldFeedback>
+	<FieldFeedback when="tooShort">
+		Email address should be at least 6 characters long.
+	</FieldFeedback>
+	<FieldFeedback when="*">
+		There's a problem with the email form field!
+	</FieldFeedback>
+</FieldFeedbacks>
