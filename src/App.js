@@ -7,7 +7,7 @@ import Shipping from './components/Shipping/Shipping';
 import Thanks from './components/Thanks/Thanks';
 import Cart from './components/Cart/Cart';
 import Config from './components/Config/Config';
-import NavBar from './components/NavBar/NavBar';
+
 import store from 'store';
 import { guid } from './utils/utils';
 import CartItemModel from './model/CartItemModel';
@@ -34,7 +34,6 @@ export class ShirtShop extends React.Component {
 
   componentDidMount() {
     console.log('App::componentDidMount');
-    this.loadDataFromStorage();
   }
 
   loadDataFromStorage() {
@@ -148,14 +147,13 @@ export class ShirtShop extends React.Component {
           <div className="appTitle">
             <h1>React ShirtShop</h1>
           </div>
-          <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
+
           <div className="mainPageBody">
             <Route
               exact
               path="/"
               render={() => (
                 <ShirtList
-                  shirts={this.state.shirts}
                   deleteShirt={this.deleteShirt}
                   addShirtToCart={this.addShirtToCart}
                 />
