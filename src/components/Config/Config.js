@@ -5,9 +5,8 @@ import ShirtModel, {
   SIZES,
   STYLES,
   COLORS,
-  LOGOS,
-  PRICES
-} from '../../model/ShirtModel';
+  LOGOS
+} from './../../model/ShirtModel';
 import ConfigButtonBar from './ConfigButtonBar';
 import ShopBar from './ShopBar';
 import store from 'store';
@@ -26,8 +25,7 @@ class Config extends Component {
     this.updateLogo = this.updateLogo.bind(this);
 
     let shirts = store.get('shirts') || {};
-    let shirt = shirts[this.props.shirtId] || this.makeNewShirt();
-    this.state = { shirt: shirt };
+    this.shirt = shirts[this.props.shirtId] || this.makeNewShirt();
   }
 
   makeNewShirt() {
@@ -40,40 +38,19 @@ class Config extends Component {
     );
   }
 
-  saveHandler = () => {
-    this.props.saveShirt(this.state.shirt);
-  };
-  newHandler = () => {
-    this.setState({ shirt: this.makeNewShirt() });
-  };
-  addToCartHandler = () => {
-    this.props.addShirtToCart(this.state.shirt);
-  };
+  saveHandler = () => {};
+  newHandler = () => {};
+  addToCartHandler = () => {};
 
-  updateColor = newColor => {
-    this.updateShirt(Object.assign(this.state.shirt, { color: newColor }));
-  };
+  updateColor = newColor => {};
 
-  updateStyle = newStyle => {
-    this.updateShirt(Object.assign(this.state.shirt, { style: newStyle }));
-  };
+  updateStyle = newStyle => {};
 
-  updateSize = newSize => {
-    this.updateShirt(
-      Object.assign(this.state.shirt, {
-        size: newSize,
-        price: PRICES[newSize.toUpperCase()]
-      })
-    );
-  };
+  updateSize = newSize => {};
 
-  updateLogo = newLogo => {
-    this.updateShirt(Object.assign(this.state.shirt, { logo: newLogo }));
-  };
+  updateLogo = newLogo => {};
 
-  updateShirt = updatedShirt => {
-    this.setState({ shirt: updatedShirt });
-  };
+  updateShirt = updatedShirt => {};
 
   render() {
     return (
@@ -89,7 +66,7 @@ class Config extends Component {
           newHandler={this.newHandler}
           addToCartHandler={this.addToCartHandler}
         />
-        <Shirt shirt={this.state.shirt} />
+        <Shirt shirt={this.shirt} />
       </div>
     );
   }

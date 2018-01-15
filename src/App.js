@@ -26,7 +26,6 @@ export class ShirtShop extends React.Component {
     this.clearCart = this.clearCart.bind(this);
 
     this.state = {
-      shirts: {},
       cartItems: {},
       order: {}
     };
@@ -34,19 +33,13 @@ export class ShirtShop extends React.Component {
 
   componentDidMount() {
     console.log('App::componentDidMount');
-    this.loadDataFromStorage();
   }
 
   loadDataFromStorage() {
     console.log('App::loadDataFromStorage');
 
-    let storedShirts = store.get('shirts') || {};
-    this.setState({ shirts: storedShirts });
-
     let storedCartItems = store.get('cartItems') || {};
     this.setState({ cartItems: storedCartItems });
-
-    console.log(Object.keys(storedShirts).length + ' shirts loaded into state');
     console.log(
       Object.keys(storedCartItems).length + ' cart items loaded into state'
     );
@@ -59,19 +52,14 @@ export class ShirtShop extends React.Component {
 
   saveShirt(shirt) {
     console.log('App::saveShirt: ' + JSON.stringify(shirt));
-    const shirts = { ...this.state.shirts };
-    shirts[shirt.id] = shirt;
-    this.setState({ shirts });
-    store.set('shirts', shirts);
+    const shirts = {};
     this.logQuantity('shirts');
   }
 
   deleteShirt(key) {
     console.log('App::deleteShirt with id: ' + key);
-    const shirts = { ...this.state.shirts };
-    delete shirts[key];
-    this.setState({ shirts });
-    store.set('shirts', shirts);
+    const shirts = {};
+
     this.logQuantity('shirts');
   }
 
@@ -100,10 +88,6 @@ export class ShirtShop extends React.Component {
       this.updateCartItem(existingItem.id, updatedItem);
       return;
     }
-
-    this.setState({ cartItems });
-    store.set('cartItems', cartItems);
-    this.logQuantity('cartItems');
   }
 
   updateCartItem(key, updatedItem) {
@@ -148,14 +132,14 @@ export class ShirtShop extends React.Component {
           <div className="appTitle">
             <h1>React ShirtShop</h1>
           </div>
-          <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
+          <NavBar cartItems={this.state.cartItems} shirts={{}} />
           <div className="mainPageBody">
             <Route
               exact
               path="/"
               render={() => (
                 <ShirtList
-                  shirts={this.state.shirts}
+                  shirts={{}}
                   deleteShirt={this.deleteShirt}
                   addShirtToCart={this.addShirtToCart}
                 />
