@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 
@@ -18,5 +19,14 @@ class NavBar extends Component {
     );
   }
 }
+
+NavBar.propTypes = {
+  shirts: PropTypes.object.isRequired,
+  cartItems: PropTypes.object.isRequired
+};
+NavBar.defaultProps = {
+  shirts: null,
+  cartItems: null
+};
 
 export default NavBar;
