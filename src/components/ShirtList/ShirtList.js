@@ -37,6 +37,7 @@ class ShirtList extends React.Component {
     return (
       <ShirtListItem
         key={key}
+        shirt={this.props.shirts[key]}
         deleteShirt={this.props.deleteShirt}
         addShirtToCart={this.props.addShirtToCart}
       />
