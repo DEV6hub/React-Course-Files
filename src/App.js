@@ -13,12 +13,13 @@ import { guid } from './utils/utils';
 import CartItemModel from './model/CartItemModel';
 import OrderModel from './model/OrderModel';
 import './App.css';
+import './components/NavBar/NavBar.css';
 
 const NavBar = props => {
   let catalogCount = Object.keys(props.shirts).length;
   let cartCount = Object.keys(props.cartItems).length;
   return (
-    <nav>
+    <nav className="navmenu">
       <button>Catalog - {catalogCount} saved items</button>
       <button>Cart - {cartCount} items</button>
     </nav>
