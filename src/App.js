@@ -14,14 +14,19 @@ import CartItemModel from './model/CartItemModel';
 import OrderModel from './model/OrderModel';
 import './App.css';
 import './components/NavBar/NavBar.css';
+import { Link } from 'react-router-dom';
 
 const NavBar = props => {
   let catalogCount = Object.keys(props.shirts).length;
   let cartCount = Object.keys(props.cartItems).length;
   return (
     <nav className="navmenu">
-      <button>Catalog - {catalogCount} saved items</button>
-      <button>Cart - {cartCount} items</button>
+      <Link to="/">
+        <button>Catalog - {catalogCount} saved items</button>
+      </Link>
+      <Link to="/cart">
+        <button>Cart - {cartCount} items</button>
+      </Link>
     </nav>
   );
 };
