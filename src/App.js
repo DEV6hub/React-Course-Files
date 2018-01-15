@@ -7,29 +7,12 @@ import Shipping from './components/Shipping/Shipping';
 import Thanks from './components/Thanks/Thanks';
 import Cart from './components/Cart/Cart';
 import Config from './components/Config/Config';
-
+import NavBar from './components/NavBar/NavBar';
 import store from 'store';
 import { guid } from './utils/utils';
 import CartItemModel from './model/CartItemModel';
 import OrderModel from './model/OrderModel';
 import './App.css';
-import './components/NavBar/NavBar.css';
-import { Link } from 'react-router-dom';
-
-const NavBar = props => {
-  let catalogCount = Object.keys(props.shirts).length;
-  let cartCount = Object.keys(props.cartItems).length;
-  return (
-    <nav className="navmenu">
-      <Link to="/">
-        <button>Catalog - {catalogCount} saved items</button>
-      </Link>
-      <Link to="/cart">
-        <button>Cart - {cartCount} items</button>
-      </Link>
-    </nav>
-  );
-};
 
 export class ShirtShop extends React.Component {
   constructor() {
