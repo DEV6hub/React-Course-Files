@@ -155,6 +155,7 @@ export class ShirtShop extends React.Component {
               path="/"
               render={() => (
                 <ShirtList
+                  shirts={this.state.shirts}
                   deleteShirt={this.deleteShirt}
                   addShirtToCart={this.addShirtToCart}
                 />
