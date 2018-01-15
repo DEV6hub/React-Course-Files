@@ -14,11 +14,13 @@ import CartItemModel from './model/CartItemModel';
 import OrderModel from './model/OrderModel';
 import './App.css';
 
-const NavBar = () => {
+const NavBar = props => {
+  let catalogCount = Object.keys(props.shirts).length;
+  let cartCount = Object.keys(props.cartItems).length;
   return (
     <nav>
-      <button>Catalog</button>
-      <button>Cart</button>
+      <button>Catalog - {catalogCount} saved items</button>
+      <button>Cart - {cartCount} items</button>
     </nav>
   );
 };
@@ -156,7 +158,7 @@ export class ShirtShop extends React.Component {
           <div className="appTitle">
             <h1>React ShirtShop</h1>
           </div>
-          <NavBar />
+          <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
           <div className="mainPageBody">
             <Route
               exact
