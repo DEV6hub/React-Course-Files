@@ -141,6 +141,7 @@ export class ShirtShop extends React.Component {
 
   render() {
     console.log('App::render');
+    this.loadDataFromStorage();
     return (
       <Router>
         <div className="container">
