@@ -34,6 +34,7 @@ export class ShirtShop extends React.Component {
 
   componentDidMount() {
     console.log('App::componentDidMount');
+    this.loadDataFromStorage();
   }
 
   loadDataFromStorage() {
@@ -141,7 +142,6 @@ export class ShirtShop extends React.Component {
 
   render() {
     console.log('App::render');
-    this.loadDataFromStorage();
     return (
       <Router>
         <div className="container">
