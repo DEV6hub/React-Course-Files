@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
 
-const NavBar = props => {
+const NavBarFunction = props => {
   let catalogCount = Object.keys(props.shirts).length;
   let cartCount = Object.keys(props.cartItems).length;
   return (
@@ -16,5 +16,11 @@ const NavBar = props => {
     </nav>
   );
 };
+
+class NavBar extends Component {
+  render(props) {
+    return null;
+  }
+}
 
 export default NavBar;
