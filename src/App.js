@@ -14,6 +14,15 @@ import CartItemModel from './model/CartItemModel';
 import OrderModel from './model/OrderModel';
 import './App.css';
 
+const NavBar = () => {
+  return (
+    <nav>
+      <button>Catalog</button>
+      <button>Cart</button>
+    </nav>
+  );
+};
+
 export class ShirtShop extends React.Component {
   constructor() {
     super();
@@ -147,7 +156,7 @@ export class ShirtShop extends React.Component {
           <div className="appTitle">
             <h1>React ShirtShop</h1>
           </div>
-
+          <NavBar />
           <div className="mainPageBody">
             <Route
               exact
