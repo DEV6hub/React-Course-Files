@@ -11,10 +11,9 @@ class ShirtList extends React.Component {
   render = props => (
     <div>
       {this.renderAddLink()}
-      {/* {Object.keys(this.props.shirts).length > 0
+      {Object.keys(this.props.shirts).length > 0
         ? this.renderShirts()
-        : this.renderEmpty()} */}
-      {this.renderEmpty()}
+        : this.renderEmpty()}
     </div>
   );
 
