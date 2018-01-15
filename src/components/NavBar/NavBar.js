@@ -19,6 +19,8 @@ const NavBarFunction = props => {
 
 class NavBar extends Component {
   render(props) {
+    let catalogCount = Object.keys(this.props.shirts).length;
+    let cartCount = Object.keys(this.props.cartItems).length;
     return null;
   }
 }
