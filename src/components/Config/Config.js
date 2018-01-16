@@ -48,11 +48,17 @@ class Config extends Component {
     this.updateShirt(Object.assign(this.state.shirt, { color: newColor }));
   };
 
-  updateStyle = newStyle => {};
+  updateStyle = newStyle => {
+    console.log('Config::updateStyle: ' + newStyle);
+    this.updateShirt(Object.assign(this.state.shirt, { style: newStyle }));
+  };
 
   updateSize = newSize => {};
 
-  updateLogo = newLogo => {};
+  updateLogo = newLogo => {
+    console.log('Config::updateLogo: ' + newLogo);
+    this.updateShirt(Object.assign(this.state.shirt, { logo: newLogo }));
+  };
 
   updateShirt = updatedShirt => {
     console.log('Config::updateShirt: ' + JSON.stringify(updatedShirt));
