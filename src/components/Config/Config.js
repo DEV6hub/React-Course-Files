@@ -43,7 +43,10 @@ class Config extends Component {
   newHandler = () => {};
   addToCartHandler = () => {};
 
-  updateColor = newColor => {};
+  updateColor = newColor => {
+    console.log('Config::updateColor: ' + newColor);
+    this.updateShirt(Object.assign(this.state.shirt, { color: newColor }));
+  };
 
   updateStyle = newStyle => {};
 
@@ -51,7 +54,10 @@ class Config extends Component {
 
   updateLogo = newLogo => {};
 
-  updateShirt = updatedShirt => {};
+  updateShirt = updatedShirt => {
+    console.log('Config::updateShirt: ' + JSON.stringify(updatedShirt));
+    this.setState({ shirt: updatedShirt });
+  };
 
   render() {
     return (
