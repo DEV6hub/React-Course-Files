@@ -41,7 +41,9 @@ class Config extends Component {
   }
 
   saveHandler = () => {};
-  newHandler = () => {};
+  newHandler = () => {
+    this.setState({ shirt: this.makeNewShirt() });
+  };
   addToCartHandler = () => {};
 
   updateColor = newColor => {
