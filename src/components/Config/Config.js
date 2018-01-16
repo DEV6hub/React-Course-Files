@@ -5,7 +5,8 @@ import ShirtModel, {
   SIZES,
   STYLES,
   COLORS,
-  LOGOS
+  LOGOS,
+  PRICES
 } from './../../model/ShirtModel';
 import ConfigButtonBar from './ConfigButtonBar';
 import ShopBar from './ShopBar';
@@ -53,7 +54,15 @@ class Config extends Component {
     this.updateShirt(Object.assign(this.state.shirt, { style: newStyle }));
   };
 
-  updateSize = newSize => {};
+  updateSize = newSize => {
+    console.log('Config::updateSize: ' + newSize);
+    this.updateShirt(
+      Object.assign(this.state.shirt, {
+        size: newSize,
+        price: PRICES[newSize.toUpperCase()]
+      })
+    );
+  };
 
   updateLogo = newLogo => {
     console.log('Config::updateLogo: ' + newLogo);
