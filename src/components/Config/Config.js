@@ -40,7 +40,9 @@ class Config extends Component {
     );
   }
 
-  saveHandler = () => {};
+  saveHandler = () => {
+    this.props.saveShirt(this.state.shirt);
+  };
   newHandler = () => {
     this.setState({ shirt: this.makeNewShirt() });
   };
