@@ -46,7 +46,9 @@ class Config extends Component {
   newHandler = () => {
     this.setState({ shirt: this.makeNewShirt() });
   };
-  addToCartHandler = () => {};
+  addToCartHandler = () => {
+    this.props.addShirtToCart(this.state.shirt);
+  };
 
   updateColor = newColor => {
     console.log('Config::updateColor: ' + newColor);
