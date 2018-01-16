@@ -25,7 +25,8 @@ class Config extends Component {
     this.updateLogo = this.updateLogo.bind(this);
 
     let shirts = store.get('shirts') || {};
-    this.shirt = shirts[this.props.shirtId] || this.makeNewShirt();
+    let shirt = shirts[this.props.shirtId] || this.makeNewShirt();
+    this.state = { shirt: shirt };
   }
 
   makeNewShirt() {
@@ -66,7 +67,7 @@ class Config extends Component {
           newHandler={this.newHandler}
           addToCartHandler={this.addToCartHandler}
         />
-        <Shirt shirt={this.shirt} />
+        <Shirt shirt={this.state.shirt} />
       </div>
     );
   }
