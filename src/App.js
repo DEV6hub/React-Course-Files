@@ -26,6 +26,7 @@ export class ShirtShop extends React.Component {
     this.clearCart = this.clearCart.bind(this);
 
     this.state = {
+      shirts: {},
       cartItems: {},
       order: {}
     };
@@ -33,10 +34,15 @@ export class ShirtShop extends React.Component {
 
   componentDidMount() {
     console.log('App::componentDidMount');
+    this.loadDataFromStorage();
   }
 
   loadDataFromStorage() {
     console.log('App::loadDataFromStorage');
+
+    let storedShirts = store.get('shirts') || {};
+    this.setState({ shirts: storedShirts });
+    console.log(Object.keys(storedShirts).length + ' shirts loaded into state');
 
     let storedCartItems = store.get('cartItems') || {};
     this.setState({ cartItems: storedCartItems });
