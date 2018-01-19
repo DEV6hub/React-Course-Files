@@ -67,8 +67,10 @@ export class ShirtShop extends React.Component {
 
   deleteShirt(key) {
     console.log('App::deleteShirt with id: ' + key);
-    const shirts = {};
-
+    let shirts = { ...this.state.shirts };
+    delete shirts[key];
+    this.setState({ shirts });
+    store.set('shirts', shirts);
     this.logQuantity('shirts');
   }
 
