@@ -58,7 +58,10 @@ export class ShirtShop extends React.Component {
 
   saveShirt(shirt) {
     console.log('App::saveShirt: ' + JSON.stringify(shirt));
-    const shirts = {};
+    let shirts = { ...this.state.shirts };
+    shirts[shirt.id] = shirt;
+    this.setState({ shirts });
+    store.set('shirts', shirts);
     this.logQuantity('shirts');
   }
 
