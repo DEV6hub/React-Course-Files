@@ -97,6 +97,10 @@ export class ShirtShop extends React.Component {
       this.updateCartItem(existingItem.id, updatedItem);
       return;
     }
+
+    this.setState({ cartItems });
+    store.set('cartItems', cartItems);
+    this.logQuantity('cartItems');
   }
 
   updateCartItem(key, updatedItem) {
