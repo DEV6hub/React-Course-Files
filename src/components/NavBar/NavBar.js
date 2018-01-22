@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
 
 const NavBar = props => (
-  <nav className="navmenu">
+  <nav>
     <Link to="/">
       <button>Catalog - {Object.keys(props.shirts).length} saved items</button>
     </Link>

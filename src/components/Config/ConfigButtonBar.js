@@ -5,23 +5,23 @@ import { COLORS, SIZES, STYLES, LOGOS } from '../../model/ShirtModel';
 
 class ConfigButtonBar extends Component {
   render = props => (
-    <div className="buttonBarWrapper">
-      <div className="colorBtnsWrapper">
+    <div>
+      <div>
         <div
           onClick={() => this.props.updateColor(COLORS.RED)}
-          style={Object.assign({}, styles.red, styles.colorPickerBtn)}
+          style={styles.colorPickerBtn}
         />
         <div
           onClick={() => this.props.updateColor(COLORS.BLUE)}
-          style={Object.assign({}, styles.colorPickerBtn, styles.blue)}
+          style={styles.colorPickerBtn}
         />
         <div
           onClick={() => this.props.updateColor(COLORS.BLACK)}
-          style={Object.assign({}, styles.colorPickerBtn, styles.black)}
+          style={styles.colorPickerBtn}
         />
         <div
           onClick={() => this.props.updateColor(COLORS.WHITE)}
-          style={Object.assign({}, styles.colorPickerBtn, styles.white)}
+          style={styles.colorPickerBtn}
         />
       </div>
 
@@ -81,18 +81,6 @@ const styles = {
     minWidth: '30px',
     minHeight: '30px',
     border: '1px solid black'
-  },
-  red: {
-    backgroundColor: COLORS.RED
-  },
-  black: {
-    backgroundColor: COLORS.BLACK
-  },
-  white: {
-    backgroundColor: COLORS.WHITE
-  },
-  blue: {
-    backgroundColor: COLORS.BLUE
   }
 };
 
