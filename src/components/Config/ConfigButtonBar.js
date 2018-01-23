@@ -5,7 +5,7 @@ import { COLORS, SIZES, STYLES, LOGOS } from '../../model/ShirtModel';
 
 class ConfigButtonBar extends Component {
   render = props => (
-    <div>
+    <div className="buttonBarWrapper">
       <div className="colorBtnsWrapper">
         <div
           onClick={() => this.props.updateColor(COLORS.RED)}
