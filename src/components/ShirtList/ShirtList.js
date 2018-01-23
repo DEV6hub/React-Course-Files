@@ -27,7 +27,9 @@ class ShirtList extends React.Component {
 
   renderShirts() {
     return (
-      <div>{Object.keys(this.props.shirts).map(this.renderShirtItem)}</div>
+      <div className="shirtListWrapper">
+        {Object.keys(this.props.shirts).map(this.renderShirtItem)}
+      </div>
     );
   }
 
