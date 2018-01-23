@@ -2,6 +2,9 @@
 }
 
 .mainPageBody {
+  border: 1px solid lightgoldenrodyellow;
+  background-color: lightgray;
+  padding: 8px;
 }
 
 .appTitle {

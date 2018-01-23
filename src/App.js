@@ -149,52 +149,54 @@ export class ShirtShop extends React.Component {
             <h1>React ShirtShop</h1>
           </div>
           <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <ShirtList
-                shirts={this.state.shirts}
-                deleteShirt={this.deleteShirt}
-                addShirtToCart={this.addShirtToCart}
-              />
-            )}
-          />
+          <div className="mainPageBody">
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <ShirtList
+                  shirts={this.state.shirts}
+                  deleteShirt={this.deleteShirt}
+                  addShirtToCart={this.addShirtToCart}
+                />
+              )}
+            />
 
-          <Route
-            path="/shipping"
-            render={({ history }) => (
-              <Shipping createOrder={this.createOrder} history={history} />
-            )}
-          />
+            <Route
+              path="/shipping"
+              render={({ history }) => (
+                <Shipping createOrder={this.createOrder} history={history} />
+              )}
+            />
 
-          <Route
-            exact
-            path="/thanks"
-            render={() => <Thanks order={this.state.order} />}
-          />
+            <Route
+              exact
+              path="/thanks"
+              render={() => <Thanks order={this.state.order} />}
+            />
 
-          <Route
-            exact
-            path="/config/:shirtId"
-            render={({ match }) => (
-              <Config
-                shirtId={match.params.shirtId}
-                saveShirt={this.saveShirt}
-                addShirtToCart={this.addShirtToCart}
-              />
-            )}
-          />
-          <Route
-            path="/cart"
-            render={() => (
-              <Cart
-                cartItems={this.state.cartItems}
-                updateItem={this.updateCartItem}
-                removeItem={this.removeCartItem}
-              />
-            )}
-          />
+            <Route
+              exact
+              path="/config/:shirtId"
+              render={({ match }) => (
+                <Config
+                  shirtId={match.params.shirtId}
+                  saveShirt={this.saveShirt}
+                  addShirtToCart={this.addShirtToCart}
+                />
+              )}
+            />
+            <Route
+              path="/cart"
+              render={() => (
+                <Cart
+                  cartItems={this.state.cartItems}
+                  updateItem={this.updateCartItem}
+                  removeItem={this.removeCartItem}
+                />
+              )}
+            />
+          </div>
         </div>
       </Router>
     );
