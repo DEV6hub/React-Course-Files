@@ -3,6 +3,8 @@
   max-width: 350px;
   padding: 5px;
   margin: 5px;
+  display: flex;
+  flex-direction: column-reverse;
   border: 1px solid steelblue;
 }
 
