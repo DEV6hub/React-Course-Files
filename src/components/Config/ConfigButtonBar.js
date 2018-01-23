@@ -80,6 +80,8 @@ const styles = {
     margin: '1px',
     minWidth: '30px',
     minHeight: '30px',
+    maxWidth: '30px',
+    maxHeight: '30px',
     border: '1px solid black'
   },
   red: {
