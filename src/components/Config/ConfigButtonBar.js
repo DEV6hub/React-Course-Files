@@ -25,7 +25,8 @@ class ConfigButtonBar extends Component {
         />
       </div>
 
-      <div>
+      {/* 
+      <div> 
         <img
           src={logoCool}
           alt="logo cool"
@@ -66,6 +67,7 @@ class ConfigButtonBar extends Component {
           {STYLES.WOMEN}
         </button>
       </div>
+      */}
     </div>
   );
 }

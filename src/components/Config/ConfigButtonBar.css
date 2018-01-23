@@ -3,4 +3,5 @@
 
 .colorBtnsWrapper {
   display: flex;
+  flex-wrap: wrap;
 }
