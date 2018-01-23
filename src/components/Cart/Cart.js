@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './Cart.css';
 
 class Cart extends Component {
@@ -84,9 +83,7 @@ class Cart extends Component {
             </tr>
           </tfoot>
         </table>
-        <Link to="/shipping">
-          <button>NEXT</button>
-        </Link>
+        <button>NEXT</button>
       </div>
     );
   }

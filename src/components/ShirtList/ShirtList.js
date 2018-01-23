@@ -1,7 +1,6 @@
 import React from 'react';
 import ShirtListItem from './ShirtListItem';
 import './ShirtList.css';
-import { Link } from 'react-router-dom';
 
 class ShirtList extends React.Component {
   constructor() {
@@ -18,7 +17,7 @@ class ShirtList extends React.Component {
   );
 
   renderAddLink() {
-    return <Link to="/config/new">Create a new shirt for your catalog</Link>;
+    return 'Create a new shirt for your catalog';
   }
 
   renderEmpty() {

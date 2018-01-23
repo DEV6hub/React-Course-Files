@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './ShirtListItem.css';
-import { Link } from 'react-router-dom';
 import Shirt from './../Shirt/Shirt';
 
 class ShirtListItem extends Component {
@@ -22,9 +21,7 @@ class ShirtListItem extends Component {
             <i className="fa fa-cart-plus" aria-hidden="true" /> Add
           </button>
         </div>
-        <Link to={`/config/${this.props.shirt.id}`}>
-          <Shirt shirt={this.props.shirt} />
-        </Link>
+        <Shirt shirt={this.props.shirt} />
       </div>
     );
   };

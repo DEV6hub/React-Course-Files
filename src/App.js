@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 import ShirtList from './components/ShirtList/ShirtList';
 import Shipping from './components/Shipping/Shipping';
 import Thanks from './components/Thanks/Thanks';
@@ -143,62 +141,31 @@ export class ShirtShop extends React.Component {
   render() {
     console.log('App::render');
     return (
-      <Router>
-        <div className="container">
-          <div className="appTitle">
-            <h1>React ShirtShop</h1>
-          </div>
-          <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
-          <div className="mainPageBody">
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <ShirtList
-                  shirts={this.state.shirts}
-                  deleteShirt={this.deleteShirt}
-                  addShirtToCart={this.addShirtToCart}
-                />
-              )}
-            />
-
-            <Route
-              path="/shipping"
-              render={({ history }) => (
-                <Shipping createOrder={this.createOrder} history={history} />
-              )}
-            />
-
-            <Route
-              exact
-              path="/thanks"
-              render={() => <Thanks order={this.state.order} />}
-            />
-
-            <Route
-              exact
-              path="/config/:shirtId"
-              render={({ match }) => (
-                <Config
-                  shirtId={match.params.shirtId}
-                  saveShirt={this.saveShirt}
-                  addShirtToCart={this.addShirtToCart}
-                />
-              )}
-            />
-            <Route
-              path="/cart"
-              render={() => (
-                <Cart
-                  cartItems={this.state.cartItems}
-                  updateItem={this.updateCartItem}
-                  removeItem={this.removeCartItem}
-                />
-              )}
-            />
-          </div>
+      <div className="container">
+        <div className="appTitle">
+          <h1>React ShirtShop</h1>
         </div>
-      </Router>
+        <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
+        <div className="mainPageBody">
+          <ShirtList
+            shirts={this.state.shirts}
+            deleteShirt={this.deleteShirt}
+            addShirtToCart={this.addShirtToCart}
+          />
+          <Config
+            shirtId="new"
+            saveShirt={this.saveShirt}
+            addShirtToCart={this.addShirtToCart}
+          />
+          <Cart
+            cartItems={this.state.cartItems}
+            updateItem={this.updateCartItem}
+            removeItem={this.removeCartItem}
+          />
+          <Shipping createOrder={this.createOrder} />
+          <Thanks order={this.state.order} />
+        </div>
+      </div>
     );
   }
 }
