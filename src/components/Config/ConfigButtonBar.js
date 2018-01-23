@@ -9,7 +9,7 @@ class ConfigButtonBar extends Component {
       <div>
         <div
           onClick={() => this.props.updateColor(COLORS.RED)}
-          style={styles.colorPickerBtn}
+          style={Object.assign({}, styles.colorPickerBtn, styles.red)}
         />
         <div
           onClick={() => this.props.updateColor(COLORS.BLUE)}
@@ -81,6 +81,9 @@ const styles = {
     minWidth: '30px',
     minHeight: '30px',
     border: '1px solid black'
+  },
+  red: {
+    backgroundColor: COLORS.RED
   }
 };
 
