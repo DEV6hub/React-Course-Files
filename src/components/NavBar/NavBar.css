@@ -2,4 +2,6 @@
   background-color: linen;
   border: 1px solid lightgoldenrodyellow;
   padding: 5px;
+  display: flex;
+  justify-content: space-around;
 }
