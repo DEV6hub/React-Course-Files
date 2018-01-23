@@ -14,12 +14,14 @@ class ShirtListItem extends Component {
   render = props => {
     return (
       <div className="shirtItemWrapper">
-        <button className="shirtBtn" onClick={this.onDeleteClick}>
-          <i className="fa fa-trash" aria-hidden="true" /> Delete
-        </button>
-        <button className="shirtBtn" onClick={this.onAddClick}>
-          <i className="fa fa-cart-plus" aria-hidden="true" /> Add
-        </button>
+        <div className="btnWrapper">
+          <button className="shirtBtn" onClick={this.onDeleteClick}>
+            <i className="fa fa-trash" aria-hidden="true" /> Delete
+          </button>
+          <button className="shirtBtn" onClick={this.onAddClick}>
+            <i className="fa fa-cart-plus" aria-hidden="true" /> Add
+          </button>
+        </div>
         <Link to={`/config/${this.props.shirt.id}`}>
           <Shirt shirt={this.props.shirt} />
         </Link>
