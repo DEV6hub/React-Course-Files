@@ -4,7 +4,15 @@ import './ShopBar.css';
 
 class ShopBar extends Component {
   render = props => (
-    <div className="buttonWrapper">
+    <div
+      className="buttonWrapper"
+      style={{
+        width: '50%',
+        maxWidth: '35vw',
+        padding: '10px',
+        margin: 'auto'
+      }}
+    >
       <button type="button" onClick={this.props.saveHandler}>
         <i className="fa fa-floppy-o" aria-hidden="true" /> Save
       </button>
