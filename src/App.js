@@ -144,7 +144,7 @@ export class ShirtShop extends React.Component {
     console.log('App::render');
     return (
       <Router>
-        <div>
+        <div className="container">
           <div className="appTitle">
             <h1>React ShirtShop</h1>
           </div>

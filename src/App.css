@@ -1,4 +1,7 @@
 .container {
+  border: 10px solid green;
+  background-color: lightblue;
+  padding: 5px;
 }
 
 .mainPageBody {
