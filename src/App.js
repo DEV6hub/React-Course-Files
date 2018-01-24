@@ -143,12 +143,12 @@ export class ShirtShop extends React.Component {
   render() {
     console.log('App::render');
     return (
-      <div className="container">
-        <div className="appTitle">
-          <h1>React ShirtShop</h1>
-        </div>
-        <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
-        <Router>
+      <Router>
+        <div className="container">
+          <div className="appTitle">
+            <h1>React ShirtShop</h1>
+          </div>
+          <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
           <div className="mainPageBody">
             <Route
               exact
@@ -193,8 +193,8 @@ export class ShirtShop extends React.Component {
               render={() => <Thanks order={this.state.order} />}
             />
           </div>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }
