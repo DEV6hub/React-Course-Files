@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import ShirtList from './components/ShirtList/ShirtList';
 import Shipping from './components/Shipping/Shipping';
 import Thanks from './components/Thanks/Thanks';
@@ -146,25 +148,27 @@ export class ShirtShop extends React.Component {
           <h1>React ShirtShop</h1>
         </div>
         <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
-        <div className="mainPageBody">
-          <ShirtList
-            shirts={this.state.shirts}
-            deleteShirt={this.deleteShirt}
-            addShirtToCart={this.addShirtToCart}
-          />
-          <Config
-            shirtId="new"
-            saveShirt={this.saveShirt}
-            addShirtToCart={this.addShirtToCart}
-          />
-          <Cart
-            cartItems={this.state.cartItems}
-            updateItem={this.updateCartItem}
-            removeItem={this.removeCartItem}
-          />
-          <Shipping createOrder={this.createOrder} />
-          <Thanks order={this.state.order} />
-        </div>
+        <Router>
+          <div className="mainPageBody">
+            <ShirtList
+              shirts={this.state.shirts}
+              deleteShirt={this.deleteShirt}
+              addShirtToCart={this.addShirtToCart}
+            />
+            <Config
+              shirtId="new"
+              saveShirt={this.saveShirt}
+              addShirtToCart={this.addShirtToCart}
+            />
+            <Cart
+              cartItems={this.state.cartItems}
+              updateItem={this.updateCartItem}
+              removeItem={this.removeCartItem}
+            />
+            <Shipping createOrder={this.createOrder} />
+            <Thanks order={this.state.order} />
+          </div>
+        </Router>
       </div>
     );
   }
