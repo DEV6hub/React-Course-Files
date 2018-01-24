@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import ShirtList from './components/ShirtList/ShirtList';
 import Shipping from './components/Shipping/Shipping';
@@ -160,11 +160,17 @@ export class ShirtShop extends React.Component {
               saveShirt={this.saveShirt}
               addShirtToCart={this.addShirtToCart}
             />
-            <Cart
-              cartItems={this.state.cartItems}
-              updateItem={this.updateCartItem}
-              removeItem={this.removeCartItem}
+            <Route
+              path="/cart"
+              render={() => (
+                <Cart
+                  cartItems={this.state.cartItems}
+                  updateItem={this.updateCartItem}
+                  removeItem={this.removeCartItem}
+                />
+              )}
             />
+
             <Shipping createOrder={this.createOrder} />
             <Thanks order={this.state.order} />
           </div>
