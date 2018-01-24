@@ -150,6 +150,7 @@ export class ShirtShop extends React.Component {
         <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
         <Router>
           <div className="mainPageBody">
+            {/* 
             <ShirtList
               shirts={this.state.shirts}
               deleteShirt={this.deleteShirt}
@@ -160,6 +161,7 @@ export class ShirtShop extends React.Component {
               saveShirt={this.saveShirt}
               addShirtToCart={this.addShirtToCart}
             />
+             */}
             <Route
               path="/cart"
               render={() => (
@@ -170,9 +172,10 @@ export class ShirtShop extends React.Component {
                 />
               )}
             />
-
+            {/* 
             <Shipping createOrder={this.createOrder} />
             <Thanks order={this.state.order} />
+             */}
           </div>
         </Router>
       </div>
