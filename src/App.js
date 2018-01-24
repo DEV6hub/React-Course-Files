@@ -181,6 +181,10 @@ export class ShirtShop extends React.Component {
                 />
               )}
             />
+            <Route
+              path="/shipping"
+              render={({ history }) => JSON.stringify(history)}
+            />
             {/* 
             <Shipping createOrder={this.createOrder} />
             <Thanks order={this.state.order} />
