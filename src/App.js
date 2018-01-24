@@ -161,12 +161,16 @@ export class ShirtShop extends React.Component {
                 />
               )}
             />
+            <Route
+              path="/config/:shirtId"
+              render={({ match }) => 'shirtId: ' + match.params.shirtId}
+            />
             {/* 
             <Config
               shirtId="new"
               saveShirt={this.saveShirt}
               addShirtToCart={this.addShirtToCart}
-            />
+            /> 
              */}
             <Route
               path="/cart"
