@@ -188,9 +188,10 @@ export class ShirtShop extends React.Component {
                 <Shipping createOrder={this.createOrder} history={history} />
               )}
             />
-            {/* 
-            <Thanks order={this.state.order} />
-             */}
+            <Route
+              path="/thanks"
+              render={() => <Thanks order={this.state.order} />}
+            />
           </div>
         </Router>
       </div>
