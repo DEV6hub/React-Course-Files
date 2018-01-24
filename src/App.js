@@ -150,12 +150,18 @@ export class ShirtShop extends React.Component {
         <NavBar cartItems={this.state.cartItems} shirts={this.state.shirts} />
         <Router>
           <div className="mainPageBody">
-            {/* 
-            <ShirtList
-              shirts={this.state.shirts}
-              deleteShirt={this.deleteShirt}
-              addShirtToCart={this.addShirtToCart}
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <ShirtList
+                  shirts={this.state.shirts}
+                  deleteShirt={this.deleteShirt}
+                  addShirtToCart={this.addShirtToCart}
+                />
+              )}
             />
+            {/* 
             <Config
               shirtId="new"
               saveShirt={this.saveShirt}
