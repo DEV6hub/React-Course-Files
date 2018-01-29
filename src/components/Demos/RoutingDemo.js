@@ -53,8 +53,9 @@ export default class RoutingDemo extends React.Component {
     // 6) b) ...switch to User2 to show in the console how the component mounts and unmounts every time it's rendered.
     // return (<Router><div>
     //     {this.buttons()}
-    //     {/* <Route path="/user" component={ () => (<User username={this.state.username} /> ) } />  */}
-    //     <Route path="/user" component={ () => (<User2 username={this.state.username} /> ) } />
+    //     <p>navigate to "/user" to get started</p>
+    //     <Route path="/user" component={ () => (<User username={this.state.username} /> ) } />
+    //     {/* <Route path="/user" component={ () => (<User2 username={this.state.username} /> ) } /> */}
     //     {/* if the component function is defined inline, React.createElement() is called everytime the function executes */}
     // </div></Router>);
 
