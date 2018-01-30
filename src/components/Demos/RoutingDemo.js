@@ -273,6 +273,9 @@ export default class RoutingDemo extends React.Component {
           <Route path="/here" component={Here} />
           <Route path="/there" component={There} />
 
+          {/* 4) use children() to deactivate links to the url you're already on */}
+          {/* <Links2 /> */}
+
           {/* 3) the route below has a children property  */}
           {/* 3) the children function executes ALWAYS, not just when the path matches */}
           {/* 3) when the path doesn't match though, the match param is null */}
@@ -303,6 +306,24 @@ export default class RoutingDemo extends React.Component {
     );
   }
 }
+
+// used in conjunction with render3(), step 4
+const Links2 = () => (
+  <div>
+    <Route
+      path="/here"
+      children={({ match }) =>
+        match ? 'Go Here' : <Link to="/here">Go Here</Link>
+      }
+    />{' '}
+    <Route
+      path="/there"
+      children={({ match }) =>
+        match ? 'Go There' : <Link to="/there">Go There</Link>
+      }
+    />
+  </div>
+);
 
 // used in conjunction with render1(), steps 6 and 7
 class User2 extends React.Component {
