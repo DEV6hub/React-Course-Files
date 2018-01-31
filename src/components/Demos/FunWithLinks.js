@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-export const FunWithLinks = () => (
+const FunWithLinks = () => (
   <Router>
     <div>
       <Route component={Links} />
@@ -65,3 +65,5 @@ const Links = ({ location }) => (
     </Link>
   </div>
 );
+
+export default FunWithLinks;
