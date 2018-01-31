@@ -83,6 +83,7 @@ class Config extends Component {
           updateSize={this.updateSize}
           updateLogo={this.updateLogo}
           updateStyle={this.updateStyle}
+          shirt={this.state.shirt}
         />
         <ShopBar
           saveHandler={this.saveHandler}

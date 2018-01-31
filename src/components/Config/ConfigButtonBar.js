@@ -9,19 +9,39 @@ class ConfigButtonBar extends Component {
       <div className="colorBtnsWrapper">
         <div
           onClick={() => this.props.updateColor(COLORS.RED)}
-          style={Object.assign({}, styles.red, styles.colorPickerBtn)}
+          style={Object.assign(
+            {},
+            styles.colorPickerBtn,
+            styles.red,
+            this.props.shirt.color === COLORS.RED && styles.selected
+          )}
         />
         <div
           onClick={() => this.props.updateColor(COLORS.BLUE)}
-          style={Object.assign({}, styles.colorPickerBtn, styles.blue)}
+          style={Object.assign(
+            {},
+            styles.colorPickerBtn,
+            styles.blue,
+            this.props.shirt.color === COLORS.BLUE && styles.selected
+          )}
         />
         <div
           onClick={() => this.props.updateColor(COLORS.BLACK)}
-          style={Object.assign({}, styles.colorPickerBtn, styles.black)}
+          style={Object.assign(
+            {},
+            styles.colorPickerBtn,
+            styles.black,
+            this.props.shirt.color === COLORS.BLACK && styles.selected
+          )}
         />
         <div
           onClick={() => this.props.updateColor(COLORS.WHITE)}
-          style={Object.assign({}, styles.colorPickerBtn, styles.white)}
+          style={Object.assign(
+            {},
+            styles.colorPickerBtn,
+            styles.white,
+            this.props.shirt.color === COLORS.WHITE && styles.selected
+          )}
         />
       </div>
 
@@ -81,6 +101,9 @@ const styles = {
     minWidth: '30px',
     minHeight: '30px',
     border: '1px solid black'
+  },
+  selected: {
+    border: '4px dashed darkgray'
   },
   red: {
     backgroundColor: COLORS.RED
