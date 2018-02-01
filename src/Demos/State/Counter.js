@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './../Demos.css';
 
 class Counter extends Component {
   updateCounter(event) {
@@ -44,16 +45,8 @@ export default Counter;
 const INCREMENT = '+';
 const DECREMENT = '-';
 
-const styles = {
-  note: {
-    padding: '5px',
-    border: '1px solid black',
-    margin: '5px',
-    backgroundColor: 'lightsteelblue'
-  }
-};
 const note1 = (
-  <div style={styles.note}>
+  <div className="note">
     <p>
       I'm the <code>Counter</code> component and I am invoked by my parent,{' '}
       <code>StateDemo</code>.
@@ -65,7 +58,7 @@ const note1 = (
   </div>
 );
 const note2 = (
-  <p style={styles.note}>
+  <p className="note">
     My parent also passes me a function to call (via{' '}
     <code>this.props.functionToUpdateParentState</code>) when you click the
     buttons below.

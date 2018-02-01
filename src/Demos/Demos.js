@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import RoutingDemo from './Routing/RoutingDemo';
 import FunWithLinks from './Routing/FunWithLinks';
 import StateDemo from './State/StateDemo';
+import TypeCheckingDemo from './TypeChecking/TypeCheckingDemo';
 
 import './Demos.css';
 
@@ -13,6 +14,7 @@ const Nav = () => (
     <Link to="/routing">Routing</Link>
     <Link to="/links">Links</Link>
     <Link to="/state">State</Link>
+    <Link to="/typechecking">Type Checking</Link>
   </div>
 );
 
@@ -30,6 +32,7 @@ export default class Demos extends React.Component {
             <Route path="/routing" component={RoutingDemo} />
             <Route path="/links" component={FunWithLinks} />
             <Route path="/state" component={StateDemo} />
+            <Route path="/typechecking" component={TypeCheckingDemo} />
           </div>
         </div>
       </Router>
