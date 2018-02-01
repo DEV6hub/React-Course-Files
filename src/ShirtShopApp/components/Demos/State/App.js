@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
-// import Jsxex from './JSX';
-// import Form from './Form';
 import Counter from './Counter';
 
-class App extends Component {
+class StateDemo extends Component {
   constructor() {
     super();
     this.updateTotal = this.updateTotal.bind(this);
@@ -29,4 +25,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default StateDemo;

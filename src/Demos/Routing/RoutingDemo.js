@@ -51,6 +51,7 @@ export default class RoutingDemo extends React.Component {
 
     // 6) a) put username in state so that it will trigger a render...
     // 6) b) ...switch to User2 to show in the console how the component mounts and unmounts every time it's rendered.
+    //        hint: click the 'update something useless' button; the state change will trigger a render
     // return (<Router><div>
     //     {this.buttons()}
     //     <p>navigate to "/user" to get started</p>

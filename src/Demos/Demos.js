@@ -2,16 +2,17 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import RoutingDemo from './components/Demos/RoutingDemo';
-import FunWithLinks from './components/Demos/FunWithLinks';
+import RoutingDemo from './Routing/RoutingDemo';
+import FunWithLinks from './Routing/FunWithLinks';
+import StateDemo from './State/StateDemo';
 
-import './App.css';
-import './components/NavBar/NavBar.css';
+import './Demos.css';
 
 const Nav = () => (
-  <div className="navmenu">
+  <div style={styles.navmenu}>
     <Link to="/routing">Routing</Link>
     <Link to="/links">Links</Link>
+    <Link to="/state">State</Link>
   </div>
 );
 
@@ -22,15 +23,26 @@ export default class Demos extends React.Component {
       <Router>
         <div className="container">
           <div className="appTitle">
-            <h1>React Demos</h1>
+            <h3>the demos page</h3>
           </div>
           <Route component={Nav} />
           <div className="mainPageBody">
             <Route path="/routing" component={RoutingDemo} />
             <Route path="/links" component={FunWithLinks} />
+            <Route path="/state" component={StateDemo} />
           </div>
         </div>
       </Router>
     );
   }
 }
+
+const styles = {
+  navmenu: {
+    backgroundColor: 'linen',
+    border: '1px solid lightsteelblue',
+    padding: '5px',
+    display: 'flex',
+    justifyContent: 'space-around'
+  }
+};
