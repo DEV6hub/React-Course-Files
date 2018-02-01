@@ -1,39 +1,71 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChildAsClass from './ChildAsClass';
+
+// ChildAsClass (imported above) and Child (defined below) are essentially equal
+// ChildAsClass: class-based function with two optional props
+// Child: functional component with one optional and one required props
+const Child = props => (
+  <div>
+    <code>requiredNumberProp</code>: {props.requiredNumberProp}
+    <br />
+    <code>optionalStringProp</code>: {props.optionalStringProp}
+    <hr />
+  </div>
+);
+
+// propTypes and defaultProps are defined in the exact same way
+// for both functional components and class components
+Child.propTypes = {
+  requiredNumberProp: PropTypes.number.isRequired,
+  optionalStringProp: PropTypes.string
+};
+Child.defaultProps = {
+  optionalStringProp: 'default value from functional component'
+};
+
 const TypeCheckingDemo = () => (
   <div>
-    <div className="note">
-      I am the parent and I invoke the <code>Child</code> three different ways.
-      The child component accepts two properties; one optional and one required.
-    </div>
-    <hr />
+    <Note
+      note={
+        <div>
+          I am the parent and I invoke the <code>Child</code> in different ways.
+          That component accepts optional and required properties.
+        </div>
+      }
+    />
 
     {/* instance 1 passes all expected properties, even the optional ones */}
     <Child
       requiredNumberProp={123}
       optionalStringProp="passed by parent, overrides default"
     />
-    <hr />
 
     {/* instance 2 passes only the required properties, the default is used for the optional prop */}
     <Child requiredNumberProp={123} />
-    <hr />
 
     {/* instance 3 passes no properties */}
     {/* the default is used for the optional prop */}
     {/* check the BROWSER console for the warning */}
     {/* this is just a warning, not an error */}
     {/* does not prevent compilation */}
-    <Child />
-    <hr />
+    {/* <Child /> */}
 
-    {/* ChildAsClass is essentially the same 
-      as the Child component defined below
-      but this one is class-based */}
-    <ChildAsClass />
-    <hr />
+    {/* <Note note={<div>This class based child component gets NO props.</div>} />
+    <ChildAsClass optionalStringProp={10} /> */}
 
+    {/* <Note note={<div>This class based child component gets the wrong data type.</div>} />
+    <ChildAsClass optionalNumberProp='this is not be a number' /> */}
+
+    {footnotes}
+  </div>
+);
+
+export default TypeCheckingDemo;
+
+const Note = props => <div className="note">{props.note}</div>;
+const footnotes = (
+  <div>
     <p>
       The{' '}
       <a
@@ -45,29 +77,17 @@ const TypeCheckingDemo = () => (
       </a>{' '}
       describe all the built in validators.
     </p>
+    <div>
+      You'll see warnings in the browser console if you:
+      <ul>
+        <li>don't pass anything for a required prop</li>
+        <li>pass the wrong data type to a required or optional prop</li>
+      </ul>
+      <p>
+        Compilation will succeed but that doesn't mean your code is correct!{' '}
+        <br />Keep your console open during development! <br />win (F12) mac
+        (opt + cmd + i)
+      </p>
+    </div>
   </div>
 );
-
-export default TypeCheckingDemo;
-
-// Child is essentially the same as the
-// ChildAsClass component used above
-// but this one is a pure function
-const Child = props => (
-  <div>
-    <code>requiredNumberProp</code>: {props.requiredNumberProp}
-    <br />
-    <code>optionalStringProp</code>: {props.optionalStringProp}
-  </div>
-);
-
-// propTypes and defaultProps are defined in the exact same way
-// for both component definition types: functions and classes
-
-Child.propTypes = {
-  requiredNumberProp: PropTypes.number.isRequired,
-  optionalStringProp: PropTypes.string
-};
-Child.defaultProps = {
-  optionalStringProp: 'default value from functional component'
-};

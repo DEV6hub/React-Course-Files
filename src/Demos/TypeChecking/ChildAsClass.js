@@ -6,9 +6,11 @@ class ChildAsClass extends React.Component {
   render() {
     return (
       <div>
-        <code>requiredNumberProp</code>: {this.props.requiredNumberProp}
-        <br />
         <code>optionalStringProp</code>: {this.props.optionalStringProp}
+        <br />
+        <code>optionalNumberProp + 10</code>:{' '}
+        {this.props.optionalNumberProp + 10}
+        <hr />
       </div>
     );
   }
@@ -17,10 +19,11 @@ class ChildAsClass extends React.Component {
 export default ChildAsClass;
 
 ChildAsClass.propTypes = {
-  requiredNumberProp: PropTypes.number.isRequired,
-  optionalStringProp: PropTypes.string
+  optionalStringProp: PropTypes.string,
+  optionalNumberProp: PropTypes.number
 };
 
 ChildAsClass.defaultProps = {
-  optionalStringProp: 'default value from class component'
+  optionalStringProp: 'default value from class component',
+  optionalNumberProp: 4
 };
