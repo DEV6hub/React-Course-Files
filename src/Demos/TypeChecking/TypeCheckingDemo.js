@@ -1,10 +1,11 @@
 import React from 'react';
+import Note from './../Note';
 import PropTypes from 'prop-types';
-import ChildAsClass from './ChildAsClass';
+//import ChildAsClass from './ChildAsClass';
 
-// ChildAsClass (imported above) and Child (defined below) are essentially equal
-// ChildAsClass: class-based function with two optional props
-// Child: functional component with one optional and one required props
+// ChildAsClass (imported above) and Child (defined below) are similar
+// ChildAsClass: class-based function; accepts two optional props
+// Child: functional component; accepts one optional and one required prop
 const Child = props => (
   <div>
     <code>requiredNumberProp</code>: {props.requiredNumberProp}
@@ -29,8 +30,9 @@ const TypeCheckingDemo = () => (
     <Note
       note={
         <div>
-          I am the parent and I invoke the <code>Child</code> in different ways.
-          That component accepts optional and required properties.
+          I am the parent and I invoke the <code>Child</code> in different ways;
+          some are right and some are wrong. That component accepts optional and
+          required properties.
         </div>
       }
     />
@@ -63,20 +65,8 @@ const TypeCheckingDemo = () => (
 
 export default TypeCheckingDemo;
 
-const Note = props => <div className="note">{props.note}</div>;
 const footnotes = (
   <div>
-    <p>
-      The{' '}
-      <a
-        href="https://reactjs.org/docs/typechecking-with-proptypes.html"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        docs
-      </a>{' '}
-      describe all the built in validators.
-    </p>
     <div>
       You'll see warnings in the browser console if you:
       <ul>
@@ -89,5 +79,12 @@ const footnotes = (
         (opt + cmd + i)
       </p>
     </div>
+    <a
+      href="https://reactjs.org/docs/typechecking-with-proptypes.html"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      built in validators are described here
+    </a>
   </div>
 );

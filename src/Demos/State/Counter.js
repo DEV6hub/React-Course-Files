@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './../Demos.css';
+import Note from './../Note';
 
 class Counter extends Component {
   updateCounter(event) {
-    let newCounterValue = this.props.stateValueFromParent;
+    let newCounterValue = this.props.counterValueFromParent;
     if (event.currentTarget.id === DECREMENT) {
       newCounterValue--;
     } else if (event.currentTarget.id === INCREMENT) {
@@ -23,18 +23,17 @@ class Counter extends Component {
     return (
       <div>
         {note1}
-        <p>
+        <div>
           <code>this.props.counterValueFromParent</code>:{' '}
-          {this.props.counterValueFromParent}
-        </p>
-
+          {this.props.counterValueFromParent}{' '}
+          <button id={DECREMENT} onClick={this.updateCounter.bind(this)}>
+            {DECREMENT}
+          </button>
+          <button id={INCREMENT} onClick={this.updateCounter.bind(this)}>
+            {INCREMENT}
+          </button>
+        </div>
         {note2}
-        <button id={DECREMENT} onClick={this.updateCounter.bind(this)}>
-          {DECREMENT}
-        </button>
-        <button id={INCREMENT} onClick={this.updateCounter.bind(this)}>
-          {INCREMENT}
-        </button>
       </div>
     );
   }
@@ -46,21 +45,25 @@ const INCREMENT = '+';
 const DECREMENT = '-';
 
 const note1 = (
-  <div className="note">
-    <p>
-      I'm the <code>Counter</code> component and I am invoked by my parent,{' '}
-      <code>StateDemo</code>.
-    </p>
-    <p>
-      My parent has some <code>state</code> that it passes to me via a{' '}
-      <code>prop</code>.
-    </p>
-  </div>
+  <Note
+    note={
+      <div>
+        <div>
+          I'm the <code>Counter</code> component and I am invoked by my parent,{' '}
+          <code>StateDemo</code>. My parent has some <code>state</code> that it{' '}
+          passes to me via a <code>prop</code>.
+        </div>
+      </div>
+    }
+  />
 );
 const note2 = (
-  <p className="note">
-    My parent also passes me a function to call (via{' '}
-    <code>this.props.functionToUpdateParentState</code>) when you click the
-    buttons below.
-  </p>
+  <Note
+    note={
+      <div>
+        My parent also passes me a function that I call when you click the
+        buttons above, <code>this.props.functionToUpdateParentState</code>{' '}
+      </div>
+    }
+  />
 );
