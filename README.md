@@ -1,3 +1,17 @@
+```
+git checkout --track origin/<remote branch name>
+git branch --list
+git log --oneline
+git checkout <commit hash for the starter branch>
+git checkout -b <branch name>-mine
+```
+Now you're ready to start coding. As you complete the labs, you can commit your changes in your own branch. 
+
+```
+git add .
+git commit -m "describe what you did"
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
