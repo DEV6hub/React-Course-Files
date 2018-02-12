@@ -1,4 +1,5 @@
 import React from 'react';
+import './Note.css';
 
 // use this to illustrate the difference between the two different ways to define and use styles
 //import './Demos.css';

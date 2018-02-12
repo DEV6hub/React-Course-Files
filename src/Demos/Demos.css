@@ -17,11 +17,3 @@
   font-size: 2rem;
   text-align: center;
 }
-
-/* also check Note.js for an example of how to define styles as JavaScript objects */
-.note {
-  padding: 5px;
-  border: 1px solid black;
-  margin: 5px;
-  background-color: lightsteelblue;
-}
