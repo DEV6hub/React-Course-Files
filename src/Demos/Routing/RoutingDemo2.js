@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 export default class RoutingDemo2 extends React.Component {
   // display route props: match, location, history
   render() {
-    console.log('RoutingDemo2');
+    console.log('RoutingDemo2::render()');
     let User = props => <p>Hello {props.username}</p>;
     // add a query string and a hash to the location bar in the browser: instrument=guitar#loc
     return (

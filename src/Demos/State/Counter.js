@@ -48,11 +48,9 @@ const note1 = (
   <Note
     note={
       <div>
-        <div>
-          I'm the <code>Counter</code> component and I am invoked by my parent,{' '}
-          <code>StateDemo</code>. My parent has some <code>state</code> that it{' '}
-          passes to me via a <code>prop</code>.
-        </div>
+        I'm the <code>Counter</code> component and I am invoked by my parent,{' '}
+        <code>StateDemo</code>. My parent has some <code>state</code> that it{' '}
+        passes to me via a <code>prop</code>.
       </div>
     }
   />
