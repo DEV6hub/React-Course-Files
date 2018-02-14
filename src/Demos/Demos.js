@@ -6,6 +6,7 @@ import RoutingDemo3 from './Routing/RoutingDemo3';
 import FunWithLinks from './Routing/FunWithLinks';
 import StateDemo from './State/StateDemo';
 import TypeCheckingDemo from './TypeChecking/TypeCheckingDemo';
+import WrapperDemo from './WrapperComponent/WrapperDemo';
 
 import './Demos.css';
 
@@ -25,6 +26,7 @@ export default class Demos extends React.Component {
             <FunWithLinks />
             <StateDemo />
             <TypeCheckingDemo />
+            <WrapperDemo />
           */}
         </div>
       </div>
