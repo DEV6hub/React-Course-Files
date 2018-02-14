@@ -6,6 +6,7 @@ import RoutingDemo3 from './Routing/RoutingDemo3';
 import FunWithLinks from './Routing/FunWithLinks';
 import StateDemo from './State/StateDemo';
 import TypeCheckingDemo from './TypeChecking/TypeCheckingDemo';
+import FragmentsDemo from './Fragments/FragmentsDemo';
 
 import './Demos.css';
 
@@ -18,8 +19,9 @@ export default class Demos extends React.Component {
           <h3>the demos page</h3>
         </div>
         <div className="mainPageBody">
-          <RoutingDemo1 />
+          <FragmentsDemo />
           {/* 
+            <RoutingDemo1 />
             <RoutingDemo2 />
             <RoutingDemo3 />
             <FunWithLinks />
