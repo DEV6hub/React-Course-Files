@@ -20,7 +20,7 @@ export default class Demos extends React.Component {
         </div>
         <div className="mainPageBody">
           <RoutingDemo1 />
-          {/*
+          {/* 
             <RoutingDemo2 />
             <RoutingDemo3 />
             <FunWithLinks />
