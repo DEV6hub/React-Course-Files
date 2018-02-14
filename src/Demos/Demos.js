@@ -7,6 +7,7 @@ import FunWithLinks from './Routing/FunWithLinks';
 import StateDemo from './State/StateDemo';
 import TypeCheckingDemo from './TypeChecking/TypeCheckingDemo';
 import WrapperDemo from './WrapperComponent/WrapperDemo';
+import FragmentsDemo from './Fragments/FragmentsDemo';
 
 import './Demos.css';
 
@@ -27,6 +28,7 @@ export default class Demos extends React.Component {
             <StateDemo />
             <TypeCheckingDemo />
             <WrapperDemo />
+            <FragmentsDemo />
           */}
         </div>
       </div>
