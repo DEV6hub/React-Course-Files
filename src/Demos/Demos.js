@@ -20,15 +20,15 @@ export default class Demos extends React.Component {
           <h3>the demos page</h3>
         </div>
         <div className="mainPageBody">
-          <FragmentsDemo />
+          <RoutingDemo1 />
           {/* 
-            <RoutingDemo1 />
             <RoutingDemo2 />
             <RoutingDemo3 />
             <FunWithLinks />
             <StateDemo />
             <TypeCheckingDemo />
             <WrapperDemo />
+            <FragmentsDemo />
           */}
         </div>
       </div>
