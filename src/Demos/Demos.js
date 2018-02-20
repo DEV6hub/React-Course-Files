@@ -7,6 +7,7 @@ import FunWithLinks from './Routing/FunWithLinks';
 import StateDemo from './State/StateDemo';
 import TypeCheckingDemo from './TypeChecking/TypeCheckingDemo';
 import WrapperDemo from './WrapperComponent/WrapperDemo';
+import ErrorHandlingDemo from './ErrorHandling/ErrorHandlingDemo';
 
 import './Demos.css';
 
@@ -20,13 +21,14 @@ export default class Demos extends React.Component {
         </div>
         <div className="mainPageBody">
           <RoutingDemo1 />
-          {/* 
+          {/*
             <RoutingDemo2 />
             <RoutingDemo3 />
             <FunWithLinks />
             <StateDemo />
             <TypeCheckingDemo />
             <WrapperDemo />
+            <ErrorHandlingDemo />
           */}
         </div>
       </div>
