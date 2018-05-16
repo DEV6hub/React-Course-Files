@@ -1,18 +1,28 @@
-table {
-  margin-bottom: 30px;
-  width: 100%;
+.cart-container {
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
-th,
-td {
-  text-align: center;
+.cart-header {
+    padding-top: 20px;
 }
 
-.left {
-  text-align: left;
+.cart-header .cart-btn {
+    margin-top: 5px !important;
+    margin-right: -5px !important;
 }
 
-.quantity {
-  margin-left: 10px;
-  margin-right: 10px;
+.cart-btn-row {
+    height: 30px;
+}
+
+.cart-title {
+    color: #274686;
+    font-size: 26px;
+    font-weight: 800;
+    margin-right: 35px;
+}
+
+.cart-container .primary-btn {
+    float: right;
 }
